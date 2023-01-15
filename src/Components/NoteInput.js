@@ -4,7 +4,9 @@ const NoteInput = () => {
   const [newNote, setNewNote] = useState("");
 
   const handleChange = (event) => {
-    console.log(event.target.value);
+    const val = event.target.value;
+    setNewNote(val);
+    console.log(val);
   };
 
   return (
@@ -13,10 +15,11 @@ const NoteInput = () => {
       <input
         onChange={handleChange}
         className="inputbox"
+        type="text"
         placeholder="Write your note here..."
       ></input>
       <button>Save</button>
-      <p>Here is your previous note: {newNote}</p>
+      <p>Here is your note: {newNote}</p>
     </div>
   );
 };
