@@ -1,12 +1,20 @@
 import { useState } from "react";
 
-const NoteInput = () => {
-  const [newNote, setNewNote] = useState("");
+const NoteInput = ({ setChocolate, chocolate }) => {
+  const [tempNote, setTempNote] = useState("");
 
   const handleChange = (event) => {
     const val = event.target.value;
-    setNewNote(val);
+    setTempNote(val);
     console.log(val);
+  };
+
+  const handleSubmit = () => {
+    console.log("this is tempNote", tempNote);
+    console.log("this is chocolate", chocolate);
+    const newNotes = [...chocolate, tempNote];
+    console.log("New Notes", newNotes);
+    setChocolate(newNotes);
   };
 
   return (
@@ -18,8 +26,7 @@ const NoteInput = () => {
         type="text"
         placeholder="Write your note here..."
       ></input>
-      <button>Save</button>
-      <p>Here is your note: {newNote}</p>
+      <button onClick={handleSubmit}>Save</button>
     </div>
   );
 };
