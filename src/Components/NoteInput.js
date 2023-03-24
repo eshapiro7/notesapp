@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const NoteInput = ({ setChocolate, chocolate }) => {
+const NoteInput = ({ setNoteList, noteList }) => {
   const [tempNote, setTempNote] = useState("");
 
   const handleChange = (event) => {
@@ -10,11 +10,9 @@ const NoteInput = ({ setChocolate, chocolate }) => {
   };
 
   const handleSubmit = () => {
-    console.log("this is tempNote", tempNote);
-    console.log("this is chocolate", chocolate);
-    const newNotes = [...chocolate, tempNote];
+    const newNotes = [...noteList, tempNote];
     console.log("New Notes", newNotes);
-    setChocolate(newNotes);
+    setNoteList(newNotes);
   };
 
   return (

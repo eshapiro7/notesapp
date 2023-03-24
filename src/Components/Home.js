@@ -9,8 +9,8 @@ function Home() {
     <>
       <div className="background">
         <h1 className="header">Notes App</h1>
-        <NoteInput setChocolate={setNoteList} chocolate={noteList} />
-        <NoteList chocolate={noteList} />
+        <NoteInput setNoteList={setNoteList} noteList={noteList} />
+        <NoteList noteList={noteList} />
       </div>
     </>
   );

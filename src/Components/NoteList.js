@@ -1,8 +1,7 @@
-const NoteList = ({ chocolate }) => {
-  console.log(chocolate);
+const NoteList = ({ noteList }) => {
   return (
     <div>
-      {chocolate.map((note) => (
+      {noteList.map((note) => (
         <p>Here is your note: {note}</p>
       ))}
     </div>
